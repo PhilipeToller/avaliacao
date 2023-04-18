@@ -36,6 +36,11 @@ routes.get("/:id",(req,res)=>{
     res.status(200).json(lista[req.params.id-1])
 })
 
+routes.post("/:id",(req,res)=>{ //delete = é usado inserir dados
+    lista.splice(req.body.id-1,1)
+    res.status(200).redirect("/")
+})
+
 routes.delete("/:id",(req,res)=>{ //delete = é usado para apagar
     lista.splice(req.params.id-1,1)
     res.status(200).redirect("/")
