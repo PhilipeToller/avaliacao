@@ -3,8 +3,9 @@ const routes = require("./rotas")
 
 const server = express()
 
-server.use(routes)
+
 server.use(express.json())
+server.use(routes)
 server.use(express.urlencoded({extended:true}))
 
 
